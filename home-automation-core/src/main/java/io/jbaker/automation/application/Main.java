@@ -17,6 +17,8 @@
 package io.jbaker.automation.application;
 
 import com.codahale.metrics.health.HealthCheck.Result;
+import com.palantir.logsafe.logger.SafeLogger;
+import com.palantir.logsafe.logger.SafeLoggerFactory;
 import io.dropwizard.Application;
 import io.dropwizard.configuration.EnvironmentVariableSubstitutor;
 import io.dropwizard.configuration.SubstitutingSourceProvider;
@@ -38,11 +40,9 @@ import java.util.function.Consumer;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public final class Main extends Application<AutomationConfiguration> {
-    private static final Logger log = LoggerFactory.getLogger(Main.class);
+    private static final SafeLogger log = SafeLoggerFactory.get(Main.class);
 
     private static final Duration TRAIN_PING_PERIOD = Duration.ofMinutes(15);
     private static final String MQTT_CLIENT_ID = "home-automation-app";
@@ -83,6 +83,7 @@ public final class Main extends Application<AutomationConfiguration> {
         }
     }
 
+    @SuppressWarnings("FutureReturnValueIgnored")
     private void setupHealthcheckVariable(Messager messager, Environment environment) {
         ScheduledExecutorService executor = environment
                 .lifecycle()

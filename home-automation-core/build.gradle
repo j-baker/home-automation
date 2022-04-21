@@ -5,6 +5,7 @@ dependencies {
   implementation 'com.google.guava:guava'
   implementation 'com.palantir.conjure.java:conjure-undertow-annotations'
   implementation 'com.palantir.dialogue:dialogue-annotations'
+  implementation 'com.palantir.safe-logging:logger'
   implementation 'io.dropwizard:dropwizard-core'
   implementation 'net.sourceforge.htmlunit:htmlunit'
   implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3'
