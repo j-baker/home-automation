@@ -1,5 +1,5 @@
-openjdk-adoptium-api
---------------------
+home-automation
+---------------
 
-A small webserver designed to implement the Adoptium API. The intent is to make early access builds of OpenJDK
-be easily usable from within Gradle, which allows a third party implementation of the API.
+Automation for my house. Typically should work by communicating with an MQTT server which is mirrored to my Home
+Assistant installation.
