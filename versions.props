@@ -2,8 +2,11 @@ com.google.guava:* = 31.1-jre
 com.palantir.conjure.java:* = 6.42.0
 com.palantir.dialogue:* = 3.52.0
 com.palantir.launching:* = 1.23.0
+com.palantir.safe-logging:* = 1.26.0
 io.dropwizard:* = 2.0.29
 net.sourceforge.htmlunit:htmlunit = 2.60.0
+org.immutables:* = 2.9.0
+org.eclipse.paho:* = 1.2.5
 
 org.junit.jupiter:* = 5.8.2
 org.assertj:* = 3.22.0

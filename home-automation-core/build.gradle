@@ -5,11 +5,16 @@ dependencies {
   implementation 'com.google.guava:guava'
   implementation 'com.palantir.conjure.java:conjure-undertow-annotations'
   implementation 'com.palantir.dialogue:dialogue-annotations'
+  implementation 'com.palantir.safe-logging:logger'
   implementation 'io.dropwizard:dropwizard-core'
   implementation 'net.sourceforge.htmlunit:htmlunit'
+  implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3'
 
+  compileOnly 'org.immutables:value::annotations'
+  
   annotationProcessor 'com.palantir.conjure.java:conjure-undertow-processor'
   annotationProcessor 'com.palantir.dialogue:dialogue-annotations'
+  annotationProcessor 'org.immutables:value'
 }
 
 configurations.all {
@@ -17,13 +22,13 @@ configurations.all {
 }
 
 distribution {
-  serviceName 'openjdk-adoptium-api'
+  serviceName 'home-automation'
   serviceGroup project.group
   defaultJvmOpts '-Xmx512m'
   gc 'response-time'
 }
 
 docker {
-  name 'ghcr.io/j-baker/openjdk-adoptium-api'
+  name 'ghcr.io/j-baker/home-automation'
   files tasks.distTar.outputs
 }

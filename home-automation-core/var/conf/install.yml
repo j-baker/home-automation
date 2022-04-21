@@ -1,3 +1,15 @@
+mqtt:
+  host: ${MQTT_HOST}
+  port: 8883
+  username: ${MQTT_USER}
+  password: ${MQTT_PASSWORD}
+routes:
+  - name: to-work
+    from: ${HOME_STATION}
+    to: ${WORK_STATION}
+  - name: from-work
+    from: ${WORK_STATION}
+    to: ${HOME_STATION}
 server:
   type: simple
   applicationContextPath: /
