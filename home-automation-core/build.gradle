@@ -7,9 +7,13 @@ dependencies {
   implementation 'com.palantir.dialogue:dialogue-annotations'
   implementation 'io.dropwizard:dropwizard-core'
   implementation 'net.sourceforge.htmlunit:htmlunit'
+  implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3'
 
+  compileOnly 'org.immutables:value::annotations'
+  
   annotationProcessor 'com.palantir.conjure.java:conjure-undertow-processor'
   annotationProcessor 'com.palantir.dialogue:dialogue-annotations'
+  annotationProcessor 'org.immutables:value'
 }
 
 configurations.all {
