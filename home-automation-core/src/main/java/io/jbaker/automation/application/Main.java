@@ -14,18 +14,19 @@
  * limitations under the License.
  */
 
-package io.jbaker.oai.scrape;
+package io.jbaker.automation.application;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import io.dropwizard.Application;
+import io.dropwizard.Configuration;
+import io.dropwizard.setup.Environment;
 
-import java.util.Map;
-import org.junit.jupiter.api.Test;
+public final class Main extends Application<Configuration> {
+    private Main() {}
 
-public class JavaReleaseTest {
-    private static final JavaRelease RELEASE = new JavaRelease("19-loom+5-429", Map.of());
-
-    @Test
-    public void testExperiment() {
-        assertThat(RELEASE.getExperimentName()).contains("loom");
+    public static void main(String[] _args) throws Exception {
+        new Main().run("server", "var/conf/install.yml");
     }
+
+    @Override
+    public void run(Configuration _configuration, Environment _environment) {}
 }

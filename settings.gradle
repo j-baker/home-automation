@@ -1,3 +1,3 @@
-rootProject.name = 'openjdk-adoptium-api'
+rootProject.name = 'home-automation'
 
-include 'openjdk-adoptium-api-core'
+include 'home-automation-core'
