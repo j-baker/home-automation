@@ -22,13 +22,13 @@ configurations.all {
 }
 
 distribution {
-  serviceName 'openjdk-adoptium-api'
+  serviceName 'home-automation'
   serviceGroup project.group
   defaultJvmOpts '-Xmx512m'
   gc 'response-time'
 }
 
 docker {
-  name 'ghcr.io/j-baker/openjdk-adoptium-api'
+  name 'ghcr.io/j-baker/home-automation'
   files tasks.distTar.outputs
 }
